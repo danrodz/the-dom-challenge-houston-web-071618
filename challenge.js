@@ -19,27 +19,6 @@
   liked.addEventListener('click', () => addLike());
   submitButton.addEventListener('click', e => addComment(e));
 
-  function incrementTimer() {
-    counter.innerText = parseInt(counter.innerText) + 1;
-  }
-
-  function decrementTimer() {
-    counter.innerText = parseInt(counter.innerText) - 1;
-  }
-
-  function counterSetInterval() {
-    if (isCounting) {
-      timer = setInterval(incrementTimer, 1000);
-    } else {
-      clearInterval(timer);
-    }
-  }
-
-  function toggleTimer() {
-    isCounting = !isCounting;
-    counterSetInterval();
-  }
-
   const state = (function() {
     const state = {
       likes: {},
@@ -65,6 +44,27 @@
 
     return obj;
   })();
+
+  function incrementTimer() {
+    counter.innerText = parseInt(counter.innerText) + 1;
+  }
+
+  function decrementTimer() {
+    counter.innerText = parseInt(counter.innerText) - 1;
+  }
+
+  function toggleTimer() {
+    isCounting = !isCounting;
+    counterSetInterval();
+  }
+
+  function counterSetInterval() {
+    if (isCounting) {
+      timer = setInterval(incrementTimer, 1000);
+    } else {
+      clearInterval(timer);
+    }
+  }
 
   function addLike() {
     let num = counter.innerText;
