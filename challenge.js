@@ -67,7 +67,7 @@
   }
 
   function addLike() {
-    let num = counter.innerText;
+    const num = counter.innerText;
     state.addLike(num);
     displayLikes();
   }
