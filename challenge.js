@@ -94,7 +94,7 @@
       likedList.removeChild(likedList.firstChild);
     }
     const likes = state.getLikes();
-    for (var second in likes) {
+    for (let second in likes) {
       const li = document.createElement('li');
       li.innerText = `${second} has been liked ${likes[second]} times`;
       likedList.appendChild(li);
