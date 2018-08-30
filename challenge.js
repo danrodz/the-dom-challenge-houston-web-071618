@@ -94,9 +94,9 @@
       likedList.removeChild(likedList.firstChild);
     }
     const likes = state.getLikes();
-    for (var key in likes) {
+    for (var second in likes) {
       const li = document.createElement('li');
-      li.innerText = `${key} has been liked ${likes[key]} times`;
+      li.innerText = `${second} has been liked ${likes[second]} times`;
       likedList.appendChild(li);
     }
   }
